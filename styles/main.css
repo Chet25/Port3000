@@ -1,0 +1,210 @@
+:root {
+    --puzzle-size: 15vh;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #030315;
+    line-height: 1.1;
+}
+
+img {
+    display: block;
+}
+
+h1 {
+    font-size: 5.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.section1 p{
+    font-size: 0.852;
+    text-align: center;
+}
+
+
+.wrapper{
+    max-width: 70rem;
+    margin-inline: auto;
+}
+.section1,
+.section2,
+.section3 {
+    height: 100vh;
+    width: 100%;
+    
+}
+
+.section1 {
+    background-color: transparent;
+    overflow: clip;
+    opacity: 1;
+    scale: 1;
+    animation: section1-fade-out linear forwards;
+    animation-timeline: view();
+    animation-range: exit;
+}
+
+@keyframes section1-fade-out {
+    30%{
+        opacity: 1;
+        scale: 1;
+    }
+    100%{
+        opacity: 0;
+        scale: 2;
+    }
+}
+.section1-text {
+    inset: 3rem;
+    color: white;
+    position: relative;
+    top: 30%;
+    max-width: 45vw;
+    text-align: center;
+    scale: 0.8;
+    opacity: 1;
+    animation: sectiontext linear;
+    animation-timeline: view();
+    animation-range: exit -15vh;
+}
+
+@keyframes sectiontext {
+    to{
+        scale: 1.5;
+        opacity: 0;
+    }
+}
+
+
+
+img {
+    height: var(--puzzle-size);
+    position: fixed;
+    z-index: 10;
+    cursor: pointer;
+    transition: all ease-in-out;
+    
+}
+
+
+
+.first-puzzle {
+    top: 20vh;
+    right: 35vw;
+    scale: 1.2;
+    animation: puzzle1 8s linear 1s forwards;
+    animation-timeline: view();
+    animation-range-start: 110vh;
+    animation-range-end: 160vh;
+    
+}
+
+
+.second-puzzle {
+    top: 30vh;
+    right: 10vw;
+    scale: 1.2;
+    animation: puzzle2 8s linear 1s forwards;
+    animation-timeline: view();
+    animation-range-start: 90vh;
+    animation-range-end: 160vh;
+}
+.third-puzzle {
+    top: 50vh;
+    right: 25vw;
+    scale: 1.2;
+    animation: puzzle3 8s linear 1s forwards;
+    animation-timeline: view();
+    animation-range-start: 60vh;
+    animation-range-end: 160vh;
+}
+.fourth-puzzle {
+    top: 60vh;
+    right: 10vw;
+    scale: 1.2;
+    animation: puzzle4 8s linear 1s forwards;
+    animation-timeline: view();
+    animation-range-start: 55vh;
+    animation-range-end: 160vh;
+}
+@keyframes puzzle1 {
+    to {
+        top: 3vh;
+        right: 20.9375rem;/*335*/
+        scale: 1;
+        
+    }
+}
+@keyframes puzzle2 {
+    to {
+        top: 3vh;
+        right: 15.8125rem;/*253*/
+        scale: 1;
+
+    }
+}
+@keyframes puzzle3 {
+    to {
+        top: 3vh;
+        right: 9.125rem; /*146*/
+        scale: 1;
+
+    }
+}
+@keyframes puzzle4 {
+    to {
+        top: 3vh;
+        right: 4.0625rem;/*65*/
+        scale: 1;
+
+    }
+}
+
+.section2 {
+    background-color: salmon;
+    opacity: 0;
+    animation: section-transition linear;
+    animation-timeline: view();
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-range: 10vh 60vh;
+
+}
+
+
+.section3 {
+    background-color: red;
+    opacity: 0;
+    animation: section-transition linear;
+    animation-timeline: view();
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-range: 0 50vh;
+}
+
+
+@keyframes section-transition {
+    to{
+        opacity: 1;
+    }
+}
