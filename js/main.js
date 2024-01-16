@@ -7,7 +7,7 @@ document.querySelector('.fourth-puzzle').addEventListener('click',fourth)
 
 
 function first(){
-    window.location.href= "#"
+    window.location.href= "https://chet25.github.io/Port3000/"
     console.log('Home');
 
 }
